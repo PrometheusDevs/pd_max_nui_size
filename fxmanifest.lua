@@ -35,7 +35,3 @@ files {
 	'html/ui.html',
 	'html/style.css'
 }
-
-dependencies {
-	'es_extended'
-}
