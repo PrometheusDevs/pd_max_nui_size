@@ -25,7 +25,7 @@ game 'gta5'
 
 author 'Pietro di Caprio AKA PietroDC0 - Prometheus Devs'
 description 'Force max NUI size for big screens'
-version '1.0.0'
+version '1.1.0'
 
 client_script 'client.lua'
 
