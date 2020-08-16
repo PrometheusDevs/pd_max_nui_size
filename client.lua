@@ -19,21 +19,3 @@
     Author: Pietro di Caprio - Prometheus Devs
     Repository: https://github.com/PrometheusDevs/pd_max_nui_size
 ]]
-
-fx_version 'bodacious'
-game 'gta5'
-
-author 'Pietro di Caprio AKA PietroDC0 - Prometheus Devs'
-description 'Force max NUI size for big screens'
-version '1.0.0'
-
-client_script 'client.lua'
-
-ui_page {
-	'html/ui.html'
-}
-
-files {
-	'html/ui.html',
-	'html/style.css'
-}
