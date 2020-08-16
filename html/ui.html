@@ -22,25 +22,49 @@ Repository: https://github.com/PrometheusDevs/pd_max_nui_size
 
 <html>
     <head>
+        <style id="pd_max_nui_size">
+            
+            @media screen and (min-width: 2440px) and (height: 1440px) {
+                body {
+                    max-width: 2440px;
+                    max-height: 1440px;
+                    position: relative;
+                    margin-left: calc((100% - 2440px)/2);
+                }
+            }
+            @media screen and (min-width: 2440px) and (height: 1080px) {
+                body {
+                    max-width: 1920px;
+                    max-height: 1080px;
+                    position: relative;
+                    margin-left: calc((100% - 1920px)/2);
+                }
+            }
+        
+        </style>
         <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
         <script>
-            
-            document.addEventListener("DOMContentLoaded", (event) => {
-                apply();
+
+            $( document ).ready(function() {
+                setTimeout(() => {
+                    applyToRoot();
+                }, 1000 * 2);
             });
 
-            function apply() {
-                let head = window.parent.document.head;
-                var client = new XMLHttpRequest();
-                    client.open('GET', 'style.css');
-                    client.onreadystatechange = function() {
-                        var style = document.createElement('style');
-                        style.type = 'text/css';
-                        style.id = 'pd_max_nui_size';
-                        style.innerHTML = client.responseText;
-                        head.appendChild(style);
+            function applyToRoot() {
+                let style = $('#pd_max_nui_size')[0]
+                window.parent.document.head.appendChild(style);
+            }
+
+            function applyToAll() {
+                let style = $('#pd_max_nui_size')[0]
+                let frames = window.parent.document.body.getElementsByTagName('iframe');
+                for (let element of frames) {
+                    if($('#pd_max_nui_size', element.contentDocument.head).length == 0) {
+                        console.debug('pd_max_nui_size - appending to ',  element.name)
+                        element.contentDocument.head.appendChild(style);
                     }
-                    client.send();
+                }
             }
         </script>
     </head>
