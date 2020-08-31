@@ -34,6 +34,5 @@ ui_page {
 }
 
 files {
-	'html/ui.html',
-	'html/style.css'
+	'html/ui.html'
 }
